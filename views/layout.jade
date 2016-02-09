@@ -1,7 +1,55 @@
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+include ./head.jade
+body
+  div.container
+  div.header
+    ul.nav-nav-pills-pull-right
+      li.active 
+        a(href=" ") Join the Team
+      li.disabled
+        a(href=" ") Find Teammates
+    h3.text-muted(The Scotch MEAN MapApp)
+//    Map and Side Panel
+  div.row-content
+//    google map  
+    div.col-md-7
+      div.#map: img src="holder.js/645x645
+    div.col-md-5
+      div.panel-panel-default
+        div.panel-heading
+          h2.panel-title
+        div.panel-body
+          script.form, name="addForm": novalidate
+            .form-group
+              label(for="username") Username
+              input(type="text", id=username)
+            label.radio-control-label: Gender
+            .radio 
+              label
+                input(type="radio", name="optionsRadios", id="radiomale", value="Male", ng-model="formData.gender")
+                Male
+            .radio: required
+              label
+                input(type="radio", name="optionsRadios", id="radiofemale", value="Female", ng-model="formData.gender")
+                Female
+            .radio
+              label
+                input(type="radio", name="optionsRadios", id="radioother", value="What's it to ya?", ng-model="formData.gender")
+                "What's it to ya?"
+            .form-group
+              label(for="age") Age
+              input(type="number", class="form-control", id="age", placeholder="72", ng-model="formData.age", required)
+            .form-group
+              label(for="language") Favorite Language
+              input(type="text", class="form-control", id="language", placeholder="Fortran", ng-model="formData.favlang" required)
+            .form-group
+              label(for="latitude") Latitude
+              input(type="text" class="form-control" id="latitude", value="39.500", ng-model="formData.latitude" readonly)
+            .form-group
+              label(for="longitude") Longitude
+              input(type="text" class="form-control" id="longitude", value="-98.350", ng-model="formData.longitude" readonly)
+            .form-group
+//label(for="verified")HTML Verified Location? <span><button class="btn btr"
+              input(type="text" class="form-control" id="verified", placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly)
+                  
+include ./foot.jade
+  
