@@ -1,4 +1,16 @@
-body
+doctype html
+html(ng-app="meanMapApp")
+
+  head
+    title #{syppin} syppin
+    link(rel='stylesheet', href='./stylesheets/style.css')
+    link(rel='stylesheet', href='./bower_components/bootstrap/dist/css/bootstrap.css')
+    script(src='/bower_components/holderjs/holder.js')
+    script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+    script(src='bower_components/modernizr/bin/modernizr')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js')    
+  body
     div.container
       div.header
         ul.nav-nav-pills-pull-right
@@ -50,4 +62,4 @@ body
                       input(type="text" class="form-control" id="verified", placeholder="Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly)
                         #footer
                           |  Copyright (c) syppin
-                          |  Pew pew, it's node, express, Jade, and some other crap!
+                          |  Pew pew, its node, express, Jade, and some other crap!
