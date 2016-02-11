@@ -1,23 +1,14 @@
+doctype html
+html(ng-app="meanMapApp")
 
-extends ./views/layout.jade
+  head
+    title #{syppin} syppin
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    script(src='/bower_components/holderjs/holder.js')
+    script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+    script(src='bower_components/modernizr/bin/modernizr')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js')    
 
-  include ./head.jade
-
-block content
-  p
-    | Vivamus hendrerit arcu sed erat molestie
-    | vehicula. Sed auctor neque eu tellus
-    | rhoncus ut eleifend nibh porttitor. Ut in.
-  p
-    | Donec congue lacinia dui, a porttitor
-    | lectus condimentum laoreet. Nunc eu
-    | ullamcorper orci. Quisque eget odio ac
-    | lectus vestibulum faucibus eget in metus.
-    | In pellentesque faucibus vestibulum. Nulla
-    | at nulla justo, eget luctus tortor.
-block sidebar
-  .widget
-    h1 Widget
-    p
-      | Sed auctor neque eu tellus rhoncus ut
-      | eleifend nibh porttitor. Ut in nulla enim.
+  include ./layout.jade
