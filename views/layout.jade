@@ -5,11 +5,11 @@ html(ng-app="meanMapApp")
     title #{syppin} syppin
     link(rel='stylesheet', href='./stylesheets/style.css')
     link(rel='stylesheet', href='./bower_components/bootstrap/dist/css/bootstrap.css')
-    script(src='/bower_components/holderjs/holder.js')
+    script(src='bower_components/holderjs/holder.js')
     script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
     script(src='bower_components/modernizr/bin/modernizr')
     script(src='/bower_components/jquery/dist/jquery.js')
-    script(src='/bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js')    
+    script(src='../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js')    
   body
     div.container
       div.header
@@ -25,19 +25,19 @@ html(ng-app="meanMapApp")
         div.col-md-5
           div.panel-panel-default
             div.panel-heading
-              h2.panel-title
+              h2(class='panel-title-text-center') Join the Scotch Team!<span class="glyphicon glyphicon-map-marker"></span> 
             div.panel-body
               script.
-                 <form name ="addForm" novalidate>
-                  .form-group
-                    label(for="username") Username
-                    input(type="text", id=username)
-                    label.radio-control-label: Gender
-                  .radio 
-                    label
-                      input(type="radio", name="optionsRadios", id="radiomale", value="Male", ng-model="formData.gender")
-                      Male
-                    .radio: required
+                form(name="addForm", novalidate)
+            .form-group
+                label(for="username") Username
+                input(type="text", id=username)
+            label(radio-control-label) Gender
+                .radio 
+                label
+                input(type="radio", name="optionsRadios", id="radiomale", value="Male", ng-model="formData.gender") 
+                Male
+                  .radio: required
                       label
                       input(type="radio", name="optionsRadios", id="radiofemale", value="Female", ng-model="formData.gender")
                       Female
@@ -59,7 +59,9 @@ html(ng-app="meanMapApp")
                       input(type="text" class="form-control" id="longitude", value="-98.350", ng-model="formData.longitude", readonly)
                     .form-group
                       label(for="verified", span: button.btnbtn-default-btn-xs) HTML Verified Location?
-                      input(type="text" class="form-control" id="verified", placeholder="Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly)
-                        #footer
-                          |  Copyright (c) syppin
-                          |  Pew pew, its node, express, Jade, and some other crap!
+                      input(type="text" class="form-control" id="verified", placeholder="Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified", readonly)
+                    button(class="btn-btn-danger-btn-block", type="submit", ng-disabled="addForm.$invalid") Submit
+
+            #footer
+              Copyright (c) syppin
+              Pew pew, its node, express, Jade, and some other crap!
