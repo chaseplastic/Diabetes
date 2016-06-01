@@ -7,7 +7,7 @@ module.exports = function(app) {
   //Get routes
   //---------------------------------
   //Retrieve records for all users in the DB
-  app.get('/users', function(req, res{
+  app.get('/users', function(req, res){
 
     // Uses Mongoose schema to run the search (empty conditions)
     var query = User.find({});
@@ -37,4 +37,4 @@ module.exports = function(app) {
       res.json(req.body);
     });
   });
-});
+};

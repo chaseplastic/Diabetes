@@ -1,16 +1,17 @@
 // Dependencies
 // --------------------------------------------
-var express =  require('express');
+var express = require('express');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var app = express();
+var routes = require('./app/routes.js')
 
 // Express Configuration
 // ---------------------------------------------
-// Sets connection to DB (MongoDB in first interation)
+// Sets connection to DB (MongoDB in first iteration)
 mongoose.connect("mongodb://localhost/MeanMapApp");
 
 // Logging and Parsing
@@ -25,7 +26,7 @@ app.use(methodOverride());
 
 // Routes
 // ------------------------------------------------
-// require('.app/routes.js')(app);
+require('/app/routes.js')(app);
 
 // Listen
 //---------------------------------------------------
